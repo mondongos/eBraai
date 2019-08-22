@@ -4,7 +4,6 @@ class Auction {
     this._minBid = minBid
     this._auctionLen = auctionLen
     this._currentBid = this._startingBid
-    this._auctionRecords = []
   }
 
   makeBid(bid) {
@@ -13,7 +12,7 @@ class Auction {
     } else {
       this._currentBid += bid
       let date = new Date
-      this._auctionRecords.push({amount: bid, date: date.getDate(), user: "Halsey Meem"})
+      return {amount: bid, date: date.getDate(), user: "Halsey Meem"}
     }
   }
 

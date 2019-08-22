@@ -33,10 +33,7 @@ describe("Auction", function() {
   })
 
   it("should keep a record of all bids", function() {
-    auction.makeBid(4)
     let date = new Date
-    expect(auction._auctionRecords[0].date).toEqual(date.getDate())
-    expect(auction._auctionRecords[0].amount).toEqual(4)
-    expect(auction._auctionRecords[0].user).toEqual("Halsey Meem")
+    expect(auction.makeBid(4)).toEqual({amount: 4, date: 23, user: "Halsey Meem"})
   })
 })
