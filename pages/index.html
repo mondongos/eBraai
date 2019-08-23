@@ -7,12 +7,15 @@
 </head>
 
 <body>
+  <div id="current-bid-amount">
 
+  </div>
   <label>Enter your bid:
     <input type="number" id="make-bid-input" size="2">
   </label>
   <button id="make-bid-button">Make bid</button>
   <script type="text/javascript" src="../src/models/Auction.js"></script>
+  <script type="text/javascript" src="../src/views/AuctionView.js"></script>
   <script type="text/javascript" src="../src/controllers/AuctionController.js"></script>
   <script type="text/javascript">
     var controller = new AuctionController()
