@@ -1,3 +1,4 @@
+(function(exports){
 class Auction {
   constructor(startBid, minBid, auctionLen) {
     this._startingBid = startBid
@@ -12,9 +13,13 @@ class Auction {
     } else {
       this._currentBid += bid
       let date = new Date
-      return {amount: bid, date: date.getDate(), user: "Halsey Meem"}
+      return {
+        amount: bid,
+        date: date.getDate(),
+        user: "Halsey Meem"
+      }
     }
   }
-
-
 }
+exports.Auction = Auction;
+})(this);
