@@ -5,7 +5,7 @@
     }
 
     buildCurrentBid(currentBid) {
-      return "<h2>" + currentBid + "</h2>"
+      return "<h2>Current Bid: " + currentBid + "</h2>"
     }
   }
 

@@ -5,6 +5,6 @@ describe("Auctions Views", function() {
   })
 
   it("should generate a view for the current bid", function() {
-    expect(view.buildCurrentBid(10)).toEqual("<h2>10</h2>")
+    expect(view.buildCurrentBid(10)).toEqual("<h2>Current Bid: 10</h2>")
   })
 })

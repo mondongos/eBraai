@@ -7,6 +7,10 @@ class Auction {
     this._currentBid = this._startingBid
   }
 
+  createAuction() {
+
+  }
+
   makeBid(bid) {
     if (this._minBid > bid) {
       throw new Error("Error - bid lower than minimum allowed")
