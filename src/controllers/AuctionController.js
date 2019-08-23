@@ -8,6 +8,8 @@ class AuctionController {
   setEventListeners() {
     document.getElementById("make-bid-button")
     .addEventListener("click", this.newBid.bind(this))
+    document.getElementById("current-bid-amount")
+    .innerHTML = this._auctionView.buildCurrentBid(this._auctionModel._currentBid)
   }
 
   newBid() {

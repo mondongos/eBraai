@@ -2,8 +2,8 @@
 class Auction {
   constructor(startBid, minBid, auctionLen) {
     this._startingBid = Number(startBid)
-    this._minBid = parseInt(minBid)
-    this._auctionLen = parseInt(auctionLen)
+    this._minBid = Number(minBid)
+    this._auctionLen = Number(auctionLen)
     this._currentBid = this._startingBid
   }
 
