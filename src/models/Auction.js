@@ -1,22 +1,32 @@
 (function(exports){
 class Auction {
-  constructor(startBid, minBid, auctionLen) {
-    this._startingBid = Number(startBid)
-    this._minBid = Number(minBid)
-    this._auctionLen = Number(auctionLen)
-    this._currentBid = this._startingBid
+  constructor() {
+    this._auctionDetails = {
+
+    }
+    this._currentBid = 0
+    this._allBids = []
   }
 
-  createAuction() {
-
+  createAuction(title, startBid, minBid, auctionLen) {
+    this._auctionDetails.title = title
+    this._auctionDetails.startBid = startBid
+    this._auctionDetails.minBid = minBid
+    this._auctionDetails.auctionLen = auctionLen
+    this._currentBid = startBid
   }
 
   makeBid(bid) {
-    if (this._minBid > bid) {
+    if (this._auctionDetails.minBid > bid) {
       throw new Error("Error - bid lower than minimum allowed")
     } else {
       this._currentBid += Number(bid)
       let date = new Date
+      this._allBids.push({
+        amount: bid,
+        date: date.getDate(),
+        user: "Halsey Meem"
+      })
       return {
         amount: bid,
         date: date.getDate(),
@@ -27,3 +37,5 @@ class Auction {
 }
 exports.Auction = Auction;
 })(this);
+
+// Create auction method next along with form

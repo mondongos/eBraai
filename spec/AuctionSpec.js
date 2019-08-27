@@ -2,25 +2,30 @@ describe("Auction", function() {
   var auction
 
   beforeEach(function() {
-    auction = new Auction(10, 1, 2)
+    auction = new Auction()
+    auction.createAuction("Juicy Barby",10,1,2)
   })
 
   describe("Initialisation of auction", function() {
 
+    it("should have a title", function() {
+      expect(auction._auctionDetails.title).toEqual("Juicy Barby")
+    })
+
     it("should have a starting bid price", function() {
-      expect(auction._startingBid).toEqual(10)
+      expect(auction._auctionDetails.startBid).toEqual(10)
     })
 
     it("should have a minimum bid", function() {
-      expect(auction._minBid).toEqual(1)
+      expect(auction._auctionDetails.minBid).toEqual(1)
     })
 
     it("should specify length of auction in minutes", function() {
-      expect(auction._auctionLen).toEqual(2)
+      expect(auction._auctionDetails.auctionLen).toEqual(2)
     })
 
     it("current bid defaults to starting bid", function() {
-      expect(auction._currentBid).toEqual(auction._startingBid)
+      expect(auction._currentBid).toEqual(10)
     })
   })
 
@@ -37,13 +42,28 @@ describe("Auction", function() {
       }).toThrowError("Error - bid lower than minimum allowed")
     })
 
-    it("should keep a record of all bids", function() {
+    it("should return bid", function() {
       let date = new Date
       expect(auction.makeBid(4)).toEqual({
         amount: 4,
-        date: 23,
+        date: date.getDate(),
         user: "Halsey Meem"
       })
+    })
+
+    it("should keep a record of all bids", function() {
+      let date = new Date
+      auction.makeBid(20)
+      auction.makeBid(30)
+      expect(auction._allBids).toEqual([{
+        amount: 20,
+        date: date.getDate(),
+        user: "Halsey Meem"
+      }, {
+        amount: 30,
+        date: date.getDate(),
+        user: "Halsey Meem"
+      }])
     })
   })
 })
