@@ -1,5 +1,5 @@
-# Auction Site
-A site where users can list BBQs and bid on them.
+# eBraai
+An auction site where users can list BBQs and bid on them.
 
 ## Technologies & Libraries
 JavaScript, Node.js, MongoDB, Jasmine(TDD)
