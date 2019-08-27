@@ -1,7 +1,8 @@
 (function(exports){
 class AuctionController {
   constructor() {
-    this._auctionModel = new Auction(10,2,5)
+    this._auctionModel = new Auction()
+    this._auctionModel.createAuction("No more dry meat",3,1,10)
     this._auctionView = new AuctionView()
   }
 
@@ -10,6 +11,8 @@ class AuctionController {
     .addEventListener("click", this.newBid.bind(this))
     document.getElementById("current-bid-amount")
     .innerHTML = this._auctionView.buildCurrentBid(this._auctionModel._currentBid)
+    document.getElementById("auction-title")
+    .innerHTML = this._auctionModel._auctionDetails.title
   }
 
   newBid() {
