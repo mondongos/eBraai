@@ -11,4 +11,9 @@ describe("Auction List", function() {
         auctionList.addAnAuction(auction)
         expect(auctionList._auctions[0]).toEqual(auction)
     })
+
+    it("should display a list of auctions", function() {
+        auctionList.addAnAuction(auction)
+        expect(auctionList.viewAll()).toEqual(auction)
+    })
 })
