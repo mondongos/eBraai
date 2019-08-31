@@ -6,6 +6,10 @@ class AuctionController {
     this._auctionView = new AuctionView()
   }
 
+  createNewAuction() {
+    
+  }
+
   setEventListeners() {
     document.getElementById("make-bid-button")
     .addEventListener("click", this.newBid.bind(this))
