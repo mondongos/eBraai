@@ -4,6 +4,12 @@ class AuctionList {
         this._auctions = []
     }
 
+    createNewAuction(title, startBid, minBid, auctionLen) {
+        let auction = new Auction()
+        auction.createAuction(title, startBid, minBid, auctionLen)
+        return auction
+    }
+
     addAnAuction(auction) {
         this._auctions.push(auction)
     }
