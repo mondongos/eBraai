@@ -12,6 +12,5 @@ class AuctionListController {
 exports.AuctionListController = AuctionListController;
 })(this)
 
-// Add tests
 
 
