@@ -1,12 +1,12 @@
-describe("Auction Controller", function() {
-  var controller
+// describe("Auction Controller", function() {
+//   var controller
 
-  beforeEach(function() {
-    controller = new AuctionController()
-  })
-
-
+//   beforeEach(function() {
+//     controller = new AuctionController()
+//   })
 
 
 
-})
+
+
+// })
